@@ -10,11 +10,20 @@ function createGrid(size) {
         square.style.height = `${squareSize}px`;
 
         square.addEventListener("mouseenter", function () {
-           square.style.backgroundColor = "black";
+           square.style.backgroundColor = randomColor();
         });
 
         gridContainer.appendChild(square);
     }
+}
+
+function randomColor() {
+
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+
+    return `rgb(${red}, ${green}, ${blue})`;
 }
 createGrid(16);
 
